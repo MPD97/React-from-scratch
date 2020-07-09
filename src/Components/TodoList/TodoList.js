@@ -10,16 +10,25 @@ function   TodoList(props){
         const { value, name } = event.target;
         setInputValue(value);
     }
+    const handleButtonClick = (event) => {
+        setTodoList([...todoList, inputValue]);
+        setInputValue("");
+    }
 
     return (
         <div>
-            Moja aplikacja Todo
+            <h1>Moja aplikacja Todo</h1>
             <input 
                 name="TodoInput"
                 placeholder="Co bedziemy dzisiaj robic?"
                 value={inputValue}
                 onChange={handleInputChange}
             />
+            <button
+                onClick={handleButtonClick}
+            >
+                dodaj
+            </button>
             {todoList.map((todo)=> (
                 <Todo 
                     key={todo}
