@@ -1,24 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
 
-function App() {
-  const [number, setNumber] = useState(0);
 
+import TodoList from './Components/TodoList/TodoList';
+
+function App() {
   return (
     <div className="App">
-      <div>{number}</div>
-      <button
-        onClick={() => setNumber(number + 1)}
-      >
-        +
-      </button>
-      <button
-        onClick={() => setNumber(number - 1)}
-      >
-        -
-      </button>
+      <TodoList />
     </div>
-  );
+  )
 }
 
 export default App;
