@@ -13,6 +13,8 @@ function   TodoList(props){
     }
     const handleButtonClick = (event) => {
 
+        if(!inputValue) return;
+
         if(todoList.some(todo => todo === inputValue)){
             setError("Taka wartość już istnieje.");
             return;
@@ -22,6 +24,9 @@ function   TodoList(props){
 
         setTodoList([...todoList, inputValue]);
         setInputValue("");
+    }
+    const handleTodoRemove = (todoValue) => {
+        setTodoList([...todoList.filter(todo => todo != todoValue)]);
     }
 
     return (
@@ -41,7 +46,7 @@ function   TodoList(props){
                 dodaj
             </button>
 
-            {error &&
+            {!!error &&
                 <p>{error}</p>
             }
 
@@ -49,6 +54,7 @@ function   TodoList(props){
                 <Todo 
                     key={todo}
                     todo={todo}
+                    handleCloseClick={handleTodoRemove}
                 />
             ))}
         </div>

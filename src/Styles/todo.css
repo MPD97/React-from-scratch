@@ -3,5 +3,10 @@
     margin-top: 10px;
     font-size: 30px;
     background-color: green;
-    max-width: 500px;
+    width: 500px;
+    display: flex;
+} 
+.todo button{
+    margin:auto;
+    width: 50px;
 }
