@@ -1,5 +1,7 @@
 .todo{
+    margin: auto;
     margin-top: 10px;
     font-size: 30px;
     background-color: green;
+    max-width: 500px;
 }
