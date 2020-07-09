@@ -3,7 +3,7 @@ import React from 'react';
 function Todo(props){
     return(
         <div>
-            Moje zadanie
+            {props.todo}
         </div>
     )
 }
